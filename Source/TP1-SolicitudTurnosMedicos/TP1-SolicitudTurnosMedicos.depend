@@ -1,5 +1,15 @@
 # depslib dependency file v1.0
-1690579551 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\funciones.cpp
+1690931638 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\funciones.cpp
+	"funciones.h"
 
 1690579588 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\utils.cpp
+
+1690931687 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\main.cpp
+	<iostream>
+	"main.h"
+
+1690924359 d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\main.h
+	"Funciones/funciones.h"
+
+1690931464 d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\funciones.h
 

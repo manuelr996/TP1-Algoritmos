@@ -10,4 +10,5 @@
 
 ### Consideraciones
 - CodeBlocks no guarda el projecto, asi que si necesitan agregar un archivo al proyecto deben guardar el proyecto haciendo click derecho en su nombre.
+
 ![image](https://github.com/manuelr996/TP1-Algoritmos/assets/30222117/8ce07a1b-0be1-4a59-8ce8-0d2985ef25d6)

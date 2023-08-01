@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+*.ilc
+*.ild
+*.ilf
+*.ils
+*.map
+*.tds

@@ -36,7 +36,13 @@
 			<Add library="cw32mt.lib" />
 			<Add library="import32.lib" />
 		</Linker>
+		<Unit filename="Funciones/estructuras.h" />
+		<Unit filename="Funciones/funciones.cpp" />
+		<Unit filename="Funciones/funciones.h" />
+		<Unit filename="Funciones/utils.cpp" />
+		<Unit filename="Funciones/utils.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="main.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

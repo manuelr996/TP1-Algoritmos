@@ -1,4 +1,6 @@
 #include "funciones.h"
+#include "estructuras.h"
+
  void   ProcMedicos(       )
  {
 
@@ -14,7 +16,7 @@
 
  }  // Descarga archivo TurnosDiaHora.
 
- void   LstTurnos(        )
+ void LstTurnos()
  {
 
  } // Lista ord. x Especialidades, Días y Turnos del vuelco del archivo TurnosDiasHora.

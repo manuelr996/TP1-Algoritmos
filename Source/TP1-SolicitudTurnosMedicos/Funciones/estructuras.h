@@ -4,7 +4,9 @@ struct Medico
     char ApellidoNombre[20];
     int Matricula;
     Especialidad Especialidad;
-    char FranjaHoraria; //columna Turno en el archivo
+    //Tuve que renombrar esto porque el profesor ya usa "Turno" para hablar de
+    //los turnos que saca la gente no de las franjas horarias
+    char FranjaHoraria; //columna Turno en el archivo lo
 }
 
 struct Especialidad

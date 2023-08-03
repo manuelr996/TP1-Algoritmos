@@ -1,8 +1,13 @@
+#include <fstream>
 #include <iostream>
-#include "main.h"
+#include "Funciones/funciones.h"
+
+using namespace std;
 
 int main()
 {
+
+    cout << "----EMPEZANDO----\n";
 
     //Declarar las variables utilizadas en el bloque main().
     Especialidad especialidades[20];
@@ -10,18 +15,27 @@ int main()
     Turno turnosPrevios[744]; //TurnoDiaHora va aca
     SolicitudTurno turnosRequeridos[744]; // SolicitudTurno va aca
     Turno turnosFinales[744]; //valores de salida
+    ofstream salidaDatos;
 
+    cout << "----Estructuras Declaradas----\n";
 
     ProcMedicos(       ); // Descarga archivo Medicos.
     ProcEspecialidad(      );  // Descarga archivo Especialidades.
     ProcTurnosDiaHora(       );  // Descarga archivo TurnosDiaHora.
 
-    LstTurnos(        ); // Lista ord. x Especialidades, Días y Turnos del vuelco del archivo TurnosDiasHora.
+    cout << "----Estructuras Cargadas----\n";
 
-    ProcSolTurnos(       ); // Descarga archivo SolicitudesTurnos y lista líneas de las solicitudes.
-    LstTurnos(        ); // Lista ord. x Especialidades, Días y Turnos Actualizado con las SolicitudesTurnos.
+    salidaDatos.open("./Archivox3.txt", std::fstream::out);
+    cout << "archivo abierto\n";
 
+    LstTurnos(salidaDatos, turnosPrevios); // Lista ord. x Especialidades, Dï¿½as y Turnos del vuelco del archivo TurnosDiasHora.
+
+    ProcSolTurnos(       ); // Descarga archivo SolicitudesTurnos y lista lï¿½neas de las solicitudes.
+    LstTurnos(salidaDatos, turnosFinales); // Lista ord. x Especialidades, Dï¿½as y Turnos Actualizado con las SolicitudesTurnos.
+
+    salidaDatos.close();
+    cout << "----Procesado----\n";
     //TODO: Cerrar todos los archivos
 
-    return 0;
+    return '0';
 }

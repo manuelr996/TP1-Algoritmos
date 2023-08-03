@@ -1,3 +1,11 @@
+#ifndef ESTRUCTURAS_H
+
+#define ESTRUCTURAS_H
+
+struct Especialidad
+{
+    char Nombre[20];
+};
 
 struct Medico
 {
@@ -7,11 +15,6 @@ struct Medico
     //Tuve que renombrar esto porque el profesor ya usa "Turno" para hablar de
     //los turnos que saca la gente no de las franjas horarias
     char FranjaHoraria; //columna Turno en el archivo lo
-}
-
-struct Especialidad
-{
-    char Nombre[20];
 };
 
 struct Turno
@@ -39,3 +42,5 @@ struct SolicitudTurnoDia
 {
     Turno Turno;
 };
+
+#endif

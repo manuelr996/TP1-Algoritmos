@@ -17,5 +17,7 @@ SolicitudTurno BusquedaBinariaSolTurno(SolicitudTurno SolicitudTurnos[],int cant
 void GrabaSolicitudTurnosDia(std::ofstream &id, Turno turnos[]);
 
 void OrdMedicosPorBurbuja();
+void OrdTurnosPorBurbuja(Turno turnos[], int cantidadTurnos);
+void IntercambiaTurnos(Turno &a, Turno &b);
 
 void TurnoToString(Turno turno, char *salida);

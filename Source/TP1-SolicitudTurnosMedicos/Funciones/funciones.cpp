@@ -1,6 +1,8 @@
 #include "funciones.h"
+#include "constantes.h"
 #include <stdio.h>
 #include "utils.h"
+#include <stdlib.h>
 
  void   ProcMedicos(       )
  {
@@ -17,31 +19,63 @@
 
  }  // Descarga archivo TurnosDiaHora.
 
-void LstTurnos(std::ofstream &archivoSalida, Turno turnos[744])
+/**
+ * Genera turnos aleatorios borrar luego
+*/
+void GenerarTurnos(Turno turnos[], int cantidadTurnos)
 {
-    Turno turnoTemplate;
-
-    turnoTemplate.Id = 0;
-    sprintf(turnoTemplate.Especialidad.Nombre, "General");
-    turnoTemplate.Dia = 22;
-    turnoTemplate.Hora = 10;
-    turnoTemplate.Minutos = 30;
-    sprintf(turnoTemplate.ObraSocial, "MEDICUS");
-    turnoTemplate.Credencial = 2233;
-
-    for(int i = 0; i < 200; i++)
+    srand (time(NULL));
+    for(int i = 0; i < cantidadTurnos; i++)
     {
-        turnos[i] = turnoTemplate;
-    }
+        int random = rand();
+        switch(random%5)
+        {
+            case 0:
+            sprintf(turnos[i].Especialidad.Nombre, "General");
+            break;
+            case 1:
+            sprintf(turnos[i].Especialidad.Nombre, "Pediatria");
+            break;
+            case 2:
+            sprintf(turnos[i].Especialidad.Nombre, "Odontologia");
+            break;
+            case 4:
+            sprintf(turnos[i].Especialidad.Nombre, "Otorrino");
+            break;
+            default:
+            sprintf(turnos[i].Especialidad.Nombre, "Cardiologia");
+            break;
+        }
 
-    for(int i = 0; i < 744; i++)
+        turnos[i].Dia = random % 31;
+        turnos[i].Hora = random % 19;
+        turnos[i].Minutos = random % 2 ? 0 : 30;
+        sprintf(turnos[i].ObraSocial, "OSDE");
+        turnos[i].Credencial = 3629 + i;
+    }
+}
+
+void LstTurnos(std::ofstream &archivoSalida, Turno turnos[MAX_TURNOS], int cantidadTurnos = 0, bool modoFinal)
+{
+    GenerarTurnos(turnos, cantidadTurnos); //TODO: comentar cuando la lectura de archivos este lista
+
+    OrdTurnosPorBurbuja(turnos, cantidadTurnos);
+
+    char modoString[15] = {' '};
+    modoFinal ? strcpy(modoString, "FINAL") : strcpy(modoString, "ACTUALIZADO");
+
+    archivoSalida << "\n\n      Listado de Turnos " << modoString << " orden Espec. + Dia + Horario\n";
+    archivoSalida << "Especialidad\t\tDia\tHorario\tObra Soc.\tNro. Credencial\n";
+
+    for(int i = 0; i < cantidadTurnos; i++)
     {
         if(turnos[i].Credencial != 0)
         {
-            char turnoString[52];
+            char turnoString[SIZE_STRING_MAX];
 
             TurnoToString(turnos[i], turnoString);
-            archivoSalida << turnoString;
+
+            archivoSalida << turnoString << '\n';
         }
         else
         {
@@ -49,6 +83,8 @@ void LstTurnos(std::ofstream &archivoSalida, Turno turnos[744])
         }
     }
 } // Lista ord. x Especialidades, D�as y Turnos del vuelco del archivo TurnosDiasHora.
+
+
 
  void   ProcSolTurnos(       )
  {

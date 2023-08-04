@@ -1,29 +1,35 @@
 # depslib dependency file v1.0
-1691021913 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\funciones.cpp
-	<iostream>
-	<stdio.h>
+1691190940 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\funciones.cpp
 	"funciones.h"
+	"constantes.h"
+	<stdio.h>
 	"utils.h"
+	<stdlib.h>
 
-1691022086 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\utils.cpp
+1691190991 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\utils.cpp
 	"utils.h"
 	<stdio.h>
+	<string.h>
+	"constantes.h"
 
-1691019972 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\main.cpp
+1691190711 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\main.cpp
 	<fstream>
 	<iostream>
 	"Funciones/funciones.h"
+	"Funciones/constantes.h"
 
 1690924359 d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\main.h
 	"Funciones/funciones.h"
 
-1691015566 d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\funciones.h
+1691190835 d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\funciones.h
 	<fstream>
 	"estructuras.h"
 
-1691018679 d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\estructuras.h
+1691187025 d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\estructuras.h
 
-1691022012 d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\utils.h
+1691187943 d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\utils.h
 	"estructuras.h"
 	<fstream>
+
+1691179852 d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\constantes.h
 

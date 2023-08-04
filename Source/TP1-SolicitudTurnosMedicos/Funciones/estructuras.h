@@ -19,21 +19,19 @@ struct Medico
 
 struct Turno
 {
-    int Id;
-    int Dia;
-    int Hora;
-    int Minutos;
-    int Credencial;
+    short Dia;
+    short Hora;
+    short Minutos;
+    short Credencial;
     char ObraSocial[15];
     Especialidad Especialidad;
 };
 
 struct SolicitudTurno
 {
-    int Id;
     char ApellidoNombre[20];
-    int Edad;
-    int Matricula;
+    short Edad;
+    short Matricula;
     Turno Turno; //Valores del Turno
     char FranjaHoraria; //columna Turno en el archivo
 };

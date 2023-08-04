@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include "Funciones/funciones.h"
+#include "Funciones/constantes.h"
 
 using namespace std;
 
@@ -10,11 +11,11 @@ int main()
     cout << "----EMPEZANDO----\n";
 
     //Declarar las variables utilizadas en el bloque main().
-    Especialidad especialidades[20];
-    Medico medicos[100];
-    Turno turnosPrevios[744]; //TurnoDiaHora va aca
-    SolicitudTurno turnosRequeridos[744]; // SolicitudTurno va aca
-    Turno turnosFinales[744]; //valores de salida
+    Especialidad especialidades[MAX_ESPECIALIDADES];
+    Medico medicos[MAX_MEDICOS];
+    Turno turnosPrevios[MAX_TURNOS]; //TurnoDiaHora va aca
+    SolicitudTurno turnosRequeridos[MAX_TURNOS]; // SolicitudTurno va aca
+    Turno turnosFinales[MAX_TURNOS]; //valores de salida
     ofstream salidaDatos;
 
     cout << "----Estructuras Declaradas----\n";
@@ -28,10 +29,10 @@ int main()
     salidaDatos.open("./Archivox3.txt", std::fstream::out);
     cout << "archivo abierto\n";
 
-    LstTurnos(salidaDatos, turnosPrevios); // Lista ord. x Especialidades, D�as y Turnos del vuelco del archivo TurnosDiasHora.
+    LstTurnos(salidaDatos, turnosPrevios, 25); // Lista ord. x Especialidades, D�as y Turnos del vuelco del archivo TurnosDiasHora.
 
     ProcSolTurnos(       ); // Descarga archivo SolicitudesTurnos y lista l�neas de las solicitudes.
-    LstTurnos(salidaDatos, turnosFinales); // Lista ord. x Especialidades, D�as y Turnos Actualizado con las SolicitudesTurnos.
+    LstTurnos(salidaDatos, turnosFinales, 50, true); // Lista ord. x Especialidades, D�as y Turnos Actualizado con las SolicitudesTurnos.
 
     salidaDatos.close();
     cout << "----Procesado----\n";

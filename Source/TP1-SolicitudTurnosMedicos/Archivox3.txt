@@ -1,0 +1,83 @@
+
+
+      Listado de Turnos ACTUALIZADO orden Espec. + Dia + Horario
+Especialidad		Dia	Horario	Obra Soc.	Nro. Credencial
+Cardiologia         	05	11:30	OSDE	36.38
+Cardiologia         	06	14:30	OSDE	36.39
+Cardiologia         	09	07:30	OSDE	36.51
+Cardiologia         	25	12:30	OSDE	36.32
+Cardiologia         	28	17:00	OSDE	36.48
+General             	13	09:00	OSDE	36.37
+General             	14	11:30	OSDE	36.30
+General             	14	17:30	OSDE	36.50
+General             	20	04:30	OSDE	36.33
+General             	30	07:30	OSDE	36.36
+Odontologia         	14	04:00	OSDE	36.52
+Odontologia         	18	12:00	OSDE	36.45
+Odontologia         	21	08:00	OSDE	36.34
+Otorrino            	00	11:30	OSDE	36.35
+Otorrino            	02	14:00	OSDE	36.29
+Otorrino            	12	08:30	OSDE	36.44
+Otorrino            	14	18:30	OSDE	36.53
+Otorrino            	16	17:00	OSDE	36.43
+Otorrino            	27	02:30	OSDE	36.40
+Otorrino            	28	05:00	OSDE	36.49
+Otorrino            	30	15:30	OSDE	36.41
+Pediatria           	12	14:30	OSDE	36.46
+Pediatria           	26	00:00	OSDE	36.47
+Pediatria           	27	11:00	OSDE	36.31
+Pediatria           	27	13:00	OSDE	36.42
+
+
+      Listado de Turnos FINAL orden Espec. + Dia + Horario
+Especialidad		Dia	Horario	Obra Soc.	Nro. Credencial
+Cardiologia         	04	13:30	OSDE	36.59
+Cardiologia         	05	11:30	OSDE	36.38
+Cardiologia         	06	14:30	OSDE	36.39
+Cardiologia         	07	00:30	OSDE	36.54
+Cardiologia         	09	07:30	OSDE	36.51
+Cardiologia         	15	09:30	OSDE	36.76
+Cardiologia         	25	12:30	OSDE	36.32
+Cardiologia         	28	17:00	OSDE	36.48
+General             	02	00:30	OSDE	36.56
+General             	08	04:00	OSDE	36.62
+General             	10	17:30	OSDE	36.74
+General             	12	04:30	OSDE	36.78
+General             	13	05:30	OSDE	36.58
+General             	13	09:00	OSDE	36.37
+General             	14	11:30	OSDE	36.30
+General             	14	17:30	OSDE	36.50
+General             	20	04:30	OSDE	36.33
+General             	20	16:00	OSDE	36.60
+General             	27	06:30	OSDE	36.55
+General             	30	07:00	OSDE	36.67
+General             	30	07:30	OSDE	36.36
+Odontologia         	11	07:00	OSDE	36.72
+Odontologia         	14	04:00	OSDE	36.52
+Odontologia         	18	12:00	OSDE	36.45
+Odontologia         	21	08:00	OSDE	36.34
+Otorrino            	00	11:30	OSDE	36.35
+Otorrino            	01	14:00	OSDE	36.61
+Otorrino            	02	14:00	OSDE	36.29
+Otorrino            	02	17:30	OSDE	36.64
+Otorrino            	07	08:30	OSDE	36.63
+Otorrino            	12	08:30	OSDE	36.44
+Otorrino            	14	18:30	OSDE	36.53
+Otorrino            	16	17:00	OSDE	36.43
+Otorrino            	23	14:00	OSDE	36.73
+Otorrino            	25	18:30	OSDE	36.75
+Otorrino            	27	02:30	OSDE	36.40
+Otorrino            	28	05:00	OSDE	36.49
+Otorrino            	30	15:30	OSDE	36.41
+Pediatria           	04	16:00	OSDE	36.66
+Pediatria           	04	18:30	OSDE	36.57
+Pediatria           	08	06:00	OSDE	36.69
+Pediatria           	08	11:30	OSDE	36.77
+Pediatria           	08	14:30	OSDE	36.68
+Pediatria           	12	14:30	OSDE	36.46
+Pediatria           	17	00:30	OSDE	36.65
+Pediatria           	24	10:00	OSDE	36.70
+Pediatria           	26	00:00	OSDE	36.47
+Pediatria           	27	11:00	OSDE	36.31
+Pediatria           	27	13:00	OSDE	36.42
+Pediatria           	30	08:00	OSDE	36.71

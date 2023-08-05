@@ -1,7 +1,13 @@
 #include "utils.h"
-#include <stdio.h>
-#include <string.h>
 #include "constantes.h"
+
+
+
+bool LeeTurnosDiaHora(std::ifstream &id, Turno turnos[])
+{
+
+
+}
 
 void TurnoToString(Turno turno, char *salida)
 {
@@ -93,4 +99,23 @@ short convertirHHMMtoIndice(short HH, short mm)
         valor++;
     }
     return valor;
+}
+
+using namespace std;
+bool mi_getline(std::istream &stream, char *salida, int max_lectura)
+{
+    char aux;
+    int index = 0;
+    while(stream.get(aux))
+    {
+        salida[index] = aux;
+        index++;
+
+        if(stream.tellg() == -1)
+            break;
+        if(aux == '\n' || index > max_lectura)
+            return true;
+    }
+
+    return false;
 }

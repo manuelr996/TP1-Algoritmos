@@ -4,45 +4,74 @@
 #include "utils.h"
 #include <stdlib.h>
 
- void   ProcMedicos(       )
- {
+void ProcMedicos()
+{
 
- } // Descarga archivo Medicos.
+} // Descarga archivo Medicos.
 
- void   ProcEspecialidad(      )
- {
+void ProcEspecialidad(Especialidad especialidades[])
+{
+    int cantEspecialidades;
+    std::ifstream archivoEspecialidades;
+    archivoEspecialidades.open("Especialidades.txt");
 
- }  // Descarga archivo Especialidades.
+    if (archivoEspecialidades.is_open())
+    {
+        char linea[57];
 
- void   ProcTurnosDiaHora(       )
- {
+        while (mi_getline(archivoEspecialidades, linea, 57) && cantEspecialidades < MAX_ESPECIALIDADES)
+        {
+            sscanf(linea, "%20s", especialidades[cantEspecialidades].Nombre);
+            cantEspecialidades++;
+        }
+    }
 
- }  // Descarga archivo TurnosDiaHora.
+    archivoEspecialidades.close();
+    return;
+} // Descarga archivo Especialidades.
+
+void ProcTurnosDiaHora(Turno turnos[])
+{
+    printf("Abierto TurnosDiaHora\n");
+    std::ifstream archivoTurnos;
+    archivoTurnos.open("TurnosDiaHora.txt");
+
+    if (archivoTurnos.is_open())
+    {
+        char linea[57];
+
+        while (mi_getline(archivoTurnos, linea, 57))
+        {
+            printf(linea);
+        }
+    }
+    return;
+} // Descarga archivo TurnosDiaHora.
 
 /**
  * Genera turnos aleatorios borrar luego
-*/
+ */
 void GenerarTurnos(Turno turnos[], int cantidadTurnos)
 {
-    srand (time(NULL));
-    for(int i = 0; i < cantidadTurnos; i++)
+    srand(time(NULL));
+    for (int i = 0; i < cantidadTurnos; i++)
     {
         int random = rand();
-        switch(random%5)
+        switch (random % 5)
         {
-            case 0:
+        case 0:
             sprintf(turnos[i].Especialidad.Nombre, "General");
             break;
-            case 1:
+        case 1:
             sprintf(turnos[i].Especialidad.Nombre, "Pediatria");
             break;
-            case 2:
+        case 2:
             sprintf(turnos[i].Especialidad.Nombre, "Odontologia");
             break;
-            case 4:
+        case 4:
             sprintf(turnos[i].Especialidad.Nombre, "Otorrinolaringologia");
             break;
-            default:
+        default:
             sprintf(turnos[i].Especialidad.Nombre, "Cardiologia");
             break;
         }
@@ -57,7 +86,7 @@ void GenerarTurnos(Turno turnos[], int cantidadTurnos)
 
 void LstTurnos(std::ofstream &archivoSalida, Turno turnos[MAX_TURNOS], int cantidadTurnos = 0, bool modoFinal)
 {
-    GenerarTurnos(turnos, cantidadTurnos); //TODO: comentar cuando la lectura de archivos este lista
+    GenerarTurnos(turnos, cantidadTurnos); // TODO: comentar cuando la lectura de archivos este lista
 
     OrdTurnosPorBurbuja(turnos, cantidadTurnos);
 
@@ -67,9 +96,9 @@ void LstTurnos(std::ofstream &archivoSalida, Turno turnos[MAX_TURNOS], int canti
     archivoSalida << "\n\n      Listado de Turnos " << modoString << " orden Espec. + Dia + Horario\n";
     archivoSalida << "Especialidad\t\tDia\tHorario\tObra Soc.\t\tNro. Credencial\n";
 
-    for(int i = 0; i < cantidadTurnos; i++)
+    for (int i = 0; i < cantidadTurnos; i++)
     {
-        if(turnos[i].Credencial != 0)
+        if (turnos[i].Credencial != 0)
         {
             char turnoString[SIZE_STRING_MAX];
 
@@ -84,10 +113,7 @@ void LstTurnos(std::ofstream &archivoSalida, Turno turnos[MAX_TURNOS], int canti
     }
 } // Lista ord. x Especialidades, D�as y Turnos del vuelco del archivo TurnosDiasHora.
 
+void ProcSolTurnos()
+{
 
-
- void   ProcSolTurnos(       )
- {
-
- } // Descarga archivo SolicitudesTurnos y lista l�neas de las solicitudes.
-
+} // Descarga archivo SolicitudesTurnos y lista l�neas de las solicitudes.

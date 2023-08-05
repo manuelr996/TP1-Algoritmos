@@ -1,4 +1,10 @@
+#ifndef UTILS_H
+
+#define UTILS_H
+
 #include "estructuras.h"
+#include <stdio.h>
+#include <string.h>
 #include <fstream>
 
 //Leer Un registro del ifstream y guardarlo en la estructura enviada como referencia
@@ -21,3 +27,7 @@ void OrdTurnosPorBurbuja(Turno turnos[], int cantidadTurnos);
 void IntercambiaTurnos(Turno &a, Turno &b);
 
 void TurnoToString(Turno turno, char *salida);
+bool mi_getline(std::istream &stream, char *salida, int max_lectura);
+
+
+#endif

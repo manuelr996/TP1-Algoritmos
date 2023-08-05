@@ -8,7 +8,7 @@ void TurnoToString(Turno turno, char *salida)
     //"EEEEEEEEEEEEEEEEEEEE    DD  HH:MM XXXXXXXXXXXXXXX  CC.CC
     float credencialEnFormato = (float) turno.Credencial / 100;
 
-    sprintf(salida, "%-20s\t%02d\t%02d:%02d\t%s\t%.2f",
+    sprintf(salida, "%-20s\t%02d\t%02d:%02d\t\t%-15s\t%.2f",
             turno.Especialidad.Nombre,
             turno.Dia,
             turno.Hora,
@@ -19,7 +19,7 @@ void TurnoToString(Turno turno, char *salida)
 
 
 /*
- * Ordena los turnos por credencial 
+ * Ordena los turnos por credencial
 */
 void OrdTurnosPorBurbuja(Turno turnos[], int cantidadTurnos)
 {

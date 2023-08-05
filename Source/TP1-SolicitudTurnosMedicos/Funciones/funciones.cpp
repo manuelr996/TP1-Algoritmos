@@ -40,7 +40,7 @@ void GenerarTurnos(Turno turnos[], int cantidadTurnos)
             sprintf(turnos[i].Especialidad.Nombre, "Odontologia");
             break;
             case 4:
-            sprintf(turnos[i].Especialidad.Nombre, "Otorrino");
+            sprintf(turnos[i].Especialidad.Nombre, "Otorrinolaringologia");
             break;
             default:
             sprintf(turnos[i].Especialidad.Nombre, "Cardiologia");
@@ -65,7 +65,7 @@ void LstTurnos(std::ofstream &archivoSalida, Turno turnos[MAX_TURNOS], int canti
     modoFinal ? strcpy(modoString, "FINAL") : strcpy(modoString, "ACTUALIZADO");
 
     archivoSalida << "\n\n      Listado de Turnos " << modoString << " orden Espec. + Dia + Horario\n";
-    archivoSalida << "Especialidad\t\tDia\tHorario\tObra Soc.\tNro. Credencial\n";
+    archivoSalida << "Especialidad\t\tDia\tHorario\tObra Soc.\t\tNro. Credencial\n";
 
     for(int i = 0; i < cantidadTurnos; i++)
     {

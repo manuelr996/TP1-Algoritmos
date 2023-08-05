@@ -27,7 +27,6 @@ int main()
     cout << "----Estructuras Cargadas----\n";
 
     salidaDatos.open("./Archivox3.txt", std::fstream::out);
-    cout << "archivo abierto\n";
 
     LstTurnos(salidaDatos, turnosPrevios, 25); // Lista ord. x Especialidades, D�as y Turnos del vuelco del archivo TurnosDiasHora.
 

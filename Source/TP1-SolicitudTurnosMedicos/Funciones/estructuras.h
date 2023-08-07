@@ -36,9 +36,4 @@ struct SolicitudTurno
     char FranjaHoraria; //columna Turno en el archivo
 };
 
-struct SolicitudTurnoDia
-{
-    Turno Turno;
-};
-
 #endif

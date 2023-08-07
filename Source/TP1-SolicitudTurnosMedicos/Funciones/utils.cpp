@@ -1,12 +1,39 @@
 #include "utils.h"
 #include "constantes.h"
 
-
+#include<iostream>
 
 bool LeeTurnosDiaHora(std::ifstream &id, Turno turnos[])
 {
+    char linea[57];
+    static int ultimoTurno = 0;
+
+    if(mi_getline(id, linea, 57))
+    {
+        char dia[2];
+        char hora[2];
+        char minutos[2];
+        char credencial[6];
+
+        sscanf(linea, "%20s%2s%2s%2s%15s%6s\n",
+        turnos[ultimoTurno].Especialidad.Nombre,
+        dia,
+        hora,
+        minutos,
+        turnos[ultimoTurno].ObraSocial,
+        credencial);
+
+        sscanf(dia, "%d", turnos[ultimoTurno].Dia);
 
 
+        turnos[ultimoTurno];
+
+        ultimoTurno++;
+    }
+    else
+    {
+        ultimoTurno = 0;
+    }
 }
 
 void TurnoToString(Turno turno, char *salida)

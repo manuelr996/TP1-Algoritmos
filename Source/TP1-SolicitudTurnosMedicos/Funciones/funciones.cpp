@@ -4,20 +4,23 @@
 #include "utils.h"
 #include <stdlib.h>
 
-void ProcMedicos()
+void ProcMedicos(Medico medicos[])
 {
+    int cantMedicos = 0;
 
 } // Descarga archivo Medicos.
 
 void ProcEspecialidad(Especialidad especialidades[])
 {
-    int cantEspecialidades;
+    int cantEspecialidades = 0;
     std::ifstream archivoEspecialidades;
     archivoEspecialidades.open("Especialidades.txt");
+
 
     if (archivoEspecialidades.is_open())
     {
         char linea[57];
+
 
         while (mi_getline(archivoEspecialidades, linea, 57) && cantEspecialidades < MAX_ESPECIALIDADES)
         {
@@ -27,7 +30,6 @@ void ProcEspecialidad(Especialidad especialidades[])
     }
 
     archivoEspecialidades.close();
-    return;
 } // Descarga archivo Especialidades.
 
 void ProcTurnosDiaHora(Turno turnos[])
@@ -38,11 +40,9 @@ void ProcTurnosDiaHora(Turno turnos[])
 
     if (archivoTurnos.is_open())
     {
-        char linea[57];
-
-        while (mi_getline(archivoTurnos, linea, 57))
+        while (LeeTurnosDiaHora(archivoTurnos, turnos))
         {
-            printf(linea);
+
         }
     }
     return;
@@ -91,7 +91,7 @@ void LstTurnos(std::ofstream &archivoSalida, Turno turnos[MAX_TURNOS], int canti
     OrdTurnosPorBurbuja(turnos, cantidadTurnos);
 
     char modoString[15] = {' '};
-    modoFinal ? strcpy(modoString, "FINAL") : strcpy(modoString, "ACTUALIZADO");
+    modoFinal ? strcpy(modoString, "FINAL") : strcpy(modoString, "INICIAL");
 
     archivoSalida << "\n\n      Listado de Turnos " << modoString << " orden Espec. + Dia + Horario\n";
     archivoSalida << "Especialidad\t\tDia\tHorario\tObra Soc.\t\tNro. Credencial\n";

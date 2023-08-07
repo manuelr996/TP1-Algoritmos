@@ -6,11 +6,12 @@
 	"utils.h"
 	<stdlib.h>
 
-1691258891 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\utils.cpp
+1691444547 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\funciones\utils.cpp
 	"utils.h"
 	"constantes.h"
+	<iostream>
 
-1691260249 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\main.cpp
+1691260311 source:d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\main.cpp
 	"main.h"
 
 1691257934 d:\documents\github\tp1-algoritmos\source\tp1-solicitudturnosmedicos\main.h

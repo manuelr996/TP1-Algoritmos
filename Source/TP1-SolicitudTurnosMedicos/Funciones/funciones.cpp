@@ -4,19 +4,13 @@
 #include "utils.h"
 #include <stdlib.h>
 
-void ProcMedicos(Medico medicos[])
+void ProcMedicos(std::ifstream &archivoMedicos, Medico medicos[], int &cantMedicos)
 {
-    int cantMedicos = 0;
 
 } // Descarga archivo Medicos.
 
-void ProcEspecialidad(Especialidad especialidades[])
+void ProcEspecialidad(std::ifstream &archivoEspecialidades, Especialidad especialidades[], int &cantEspecialidades)
 {
-    int cantEspecialidades = 0;
-    std::ifstream archivoEspecialidades;
-    archivoEspecialidades.open("Especialidades.txt");
-
-
     if (archivoEspecialidades.is_open())
     {
         char linea[57];
@@ -29,10 +23,9 @@ void ProcEspecialidad(Especialidad especialidades[])
         }
     }
 
-    archivoEspecialidades.close();
 } // Descarga archivo Especialidades.
 
-void ProcTurnosDiaHora(Turno turnos[])
+void ProcTurnosDiaHora(std::ifstream &archivoTDH, Turno turnos[], int &cantTurnos)
 {
     printf("Abierto TurnosDiaHora\n");
     std::ifstream archivoTurnos;
@@ -45,7 +38,6 @@ void ProcTurnosDiaHora(Turno turnos[])
 
         }
     }
-    return;
 } // Descarga archivo TurnosDiaHora.
 
 /**

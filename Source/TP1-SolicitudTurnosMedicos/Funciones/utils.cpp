@@ -15,13 +15,27 @@ bool LeeTurnosDiaHora(std::ifstream &id, Turno turnos[])
         char minutos[2];
         char credencial[6];
 
-        sscanf(linea, "%20s%2s%2s%2s%15s%6s\n",
-        turnos[ultimoTurno].Especialidad.Nombre,
-        dia,
-        hora,
-        minutos,
-        turnos[ultimoTurno].ObraSocial,
-        credencial);
+
+        //si alguien en algun futuro lejano lee esto
+        //perdon...
+        //si por algun motivo del mundo, 
+        //el archivo leyese menos de 57 caracteres esto va a volar a la mierda
+        for(int i = 0; i < 57 ; i++)
+        {
+            if(i >= 0 && i < 20)
+                turnos[ultimoTurno].Especialidad.Nombre[i] = linea[i];
+            if(i >= 20 && i < 22)
+                dia[i-20] = linea[i];
+            if(i >= 22 && i < 24)
+                hora[i-24] = linea[i];
+            if(i >= 24 && i < 26)
+                minutos[i-26] = linea[i];
+            if(i >= 26 && i < 41 )
+                turnos[ultimoTurno].Especialidad.Nombre[i-26] = linea[i];
+            if(i >= 41 && i < 47 )
+                credencial[i-41] = linea[i];
+            
+        }
 
         sscanf(dia, "%d", turnos[ultimoTurno].Dia);
 

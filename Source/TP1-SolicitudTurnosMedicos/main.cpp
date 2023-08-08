@@ -14,16 +14,28 @@ int main()
     SolicitudTurno turnosRequeridos[MAX_TURNOS]; // SolicitudTurno va aca
     Turno turnosFinales[MAX_TURNOS];             // valores de salida
 
-    int cantTurnos = 0;
-
-    ofstream salidaDatos;
 
     cout << "----Estructuras Declaradas----\n";
 
-    ProcMedicos();       // Descarga archivo Medicos.
-    ProcEspecialidad(especialidades);  // Descarga archivo Especialidades.
+
+    int cantMedicos = 0;
+    int cantEspecialidades = 0;
+    int cantTurnos = 0;
+
+    ifstream entradaMedicos;
+    ifstream entradaEspecialidades;
+    ifstream entradaTurnos;
+    ofstream salidaDatos;
+
+
+    // entradaMedicos.open("Medicos.txt", ifstream::in);
+    // entradaEspecialidades.open("Especialidades.txt", ifstream::in);
+    entradaTurnos.open("TurnosDiaHora.txt", ifstream::in);
+
     printf("Abierto TurnosDiaHora\n");
-    ProcTurnosDiaHora(turnosPrevios); // Descarga archivo TurnosDiaHora.
+    ProcMedicos(entradaMedicos, medicos, cantMedicos);       // Descarga archivo Medicos.
+    //ProcEspecialidad(entradaEspecialidades, especialidades, cantEspecialidades);  // Descarga archivo Especialidades.
+    ProcTurnosDiaHora(entradaTurnos, turnosPrevios, cantTurnos); // Descarga archivo TurnosDiaHora.
 
     cout << "----Estructuras Cargadas----\n";
 
@@ -34,6 +46,10 @@ int main()
     ProcSolTurnos();                                 // Descarga archivo SolicitudesTurnos y lista l�neas de las solicitudes.
     LstTurnos(salidaDatos, turnosFinales, 50, true); // Lista ord. x Especialidades, D�as y Turnos Actualizado con las SolicitudesTurnos.
 
+
+    entradaMedicos.close();
+    entradaEspecialidades.close();
+    entradaTurnos.close();
     salidaDatos.close();
     cout << "----Procesado----\n";
     // TODO: Cerrar todos los archivos

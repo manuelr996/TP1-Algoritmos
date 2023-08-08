@@ -11,8 +11,8 @@
 //retornar si se pudo leer exitosamente como true o false caso contrario
 bool LeeEspecialidades(std::ifstream &id, Especialidad especialidades[]);
 bool LeeMedicos(std::ifstream &id, Medico medicos[]);
-bool LeeTurnosDiaHora(std::ifstream &id, Turno turnos[]);
-bool LeeSolicitudTurnos(std::ifstream &id, SolicitudTurno solicitudesTurnos[]);
+bool LeeTurnosDiaHora(std::fstream &id, Turno turnos[]);
+bool LeeSolTurnos(std::ifstream &id, SolicitudTurno solicitudTurno[]);
 
 Especialidad BusquedaBinariaEsp(Especialidad especialidades[],int cantidadEspecialidades, char *nombreEspecialidad);
 Medico BusquedaBinariaMed(Medico especialidades[],int cantMedicos, int matriculaABuscar);
@@ -27,7 +27,7 @@ void OrdTurnosPorBurbuja(Turno turnos[], int cantidadTurnos);
 void IntercambiaTurnos(Turno &a, Turno &b);
 
 void TurnoToString(Turno turno, char *salida);
-bool mi_getline(std::istream &stream, char *salida, int max_lectura);
+bool mi_getline(std::fstream &stream, char *salida, int max_lectura);
 
 
 #endif

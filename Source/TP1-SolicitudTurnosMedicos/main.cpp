@@ -22,33 +22,36 @@ int main()
     int cantEspecialidades = 0;
     int cantTurnos = 0;
 
-    ifstream entradaMedicos;
-    ifstream entradaEspecialidades;
-    ifstream entradaTurnos;
-    ofstream salidaDatos;
+    //ifstream entradaMedicos("Medicos.txt", ifstream::in);
+    //ifstream entradaEspecialidades("Especialidades.txt", ifstream::in);
+    fstream entradaTurnos("TurnosDiaHora.txt", ios::in);
+    ofstream salidaDatos("Archivox3.txt", std::fstream::out);
 
 
     // entradaMedicos.open("Medicos.txt", ifstream::in);
     // entradaEspecialidades.open("Especialidades.txt", ifstream::in);
-    entradaTurnos.open("TurnosDiaHora.txt", ifstream::in);
+    // entradaTurnos.open("./TurnosDiaHora.txt", ifstream::out);
+    char salida[57];
 
-    printf("Abierto TurnosDiaHora\n");
-    ProcMedicos(entradaMedicos, medicos, cantMedicos);       // Descarga archivo Medicos.
+    cout << "Archivos declarados\n";
+    //entradaTurnos >> salida;
+    mi_getline(entradaTurnos, salida, 57);
+    cout << salida;
+
+
+    //ProcMedicos(entradaMedicos, medicos, cantMedicos);       // Descarga archivo Medicos.
     //ProcEspecialidad(entradaEspecialidades, especialidades, cantEspecialidades);  // Descarga archivo Especialidades.
     ProcTurnosDiaHora(entradaTurnos, turnosPrevios, cantTurnos); // Descarga archivo TurnosDiaHora.
-
     cout << "----Estructuras Cargadas----\n";
-
-    salidaDatos.open("./Archivox3.txt", std::fstream::out);
 
     LstTurnos(salidaDatos, turnosPrevios, cantTurnos); // Lista ord. x Especialidades, D�as y Turnos del vuelco del archivo TurnosDiasHora.
 
     ProcSolTurnos();                                 // Descarga archivo SolicitudesTurnos y lista l�neas de las solicitudes.
-    LstTurnos(salidaDatos, turnosFinales, 50, true); // Lista ord. x Especialidades, D�as y Turnos Actualizado con las SolicitudesTurnos.
+    LstTurnos(salidaDatos, turnosFinales, cantTurnos, true); // Lista ord. x Especialidades, D�as y Turnos Actualizado con las SolicitudesTurnos.
 
 
-    entradaMedicos.close();
-    entradaEspecialidades.close();
+    //entradaMedicos.close();
+    //entradaEspecialidades.close();
     entradaTurnos.close();
     salidaDatos.close();
     cout << "----Procesado----\n";

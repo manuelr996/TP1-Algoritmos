@@ -3,7 +3,7 @@
 
 #include<iostream>
 
-bool LeeTurnosDiaHora(std::ifstream &id, Turno turnos[])
+bool LeeTurnosDiaHora(std::fstream &id, Turno turnos[])
 {
     char linea[57];
     static int ultimoTurno = 0;
@@ -43,10 +43,12 @@ bool LeeTurnosDiaHora(std::ifstream &id, Turno turnos[])
         turnos[ultimoTurno];
 
         ultimoTurno++;
+        return true;
     }
     else
     {
         ultimoTurno = 0;
+        return false;
     }
 }
 //======================================================================
@@ -57,6 +59,8 @@ bool LeeSolTurnos(std::ifstream &id, SolicitudTurno solicitudTurno[])
     char aux[6];
     char aux2[2];
     char aux3[6];
+    static int ultimaSolicitud = 0;
+
 
     if(mi_getline(id, linea, 72))
     {
@@ -64,15 +68,15 @@ bool LeeSolTurnos(std::ifstream &id, SolicitudTurno solicitudTurno[])
         {
             if(i >= 0 && i <20)
             {
-                solicitudTurno.ApellidoNombre[i] = linea[i];
+                solicitudTurno[ultimaSolicitud].ApellidoNombre[i] = linea[i];
             }
             else if(i >= 20 && i <22)
             {
-                solicitudTurno.Edad[i - 20] = linea[i];
+                solicitudTurno[ultimaSolicitud].Edad[i - 20] = linea[i];
             }
             else if(i >= 22 && i <37)
             {
-                solicitudTurno.ObraSocial[i - 22] = linea[i];
+                solicitudTurno[ultimaSolicitud].ObraSocial[i - 22] = linea[i];
             }
             else if(i >= 37 && i <43)
             {
@@ -80,7 +84,7 @@ bool LeeSolTurnos(std::ifstream &id, SolicitudTurno solicitudTurno[])
             }
             else if(i >= 43 && i <63)
             {
-                solicitudTurno.Especialidad.Nombre[i - 43] = linea[i];
+                solicitudTurno[ultimaSolicitud].Especialidad.Nombre[i - 43] = linea[i];
             }
             else if(i >= 63 && i <65)
             {
@@ -88,7 +92,7 @@ bool LeeSolTurnos(std::ifstream &id, SolicitudTurno solicitudTurno[])
             }
             else if(i >= 65 && i <66)
             {
-                solicitudTurno.Turno[i - 65] = linea[i];
+                solicitudTurno[ultimaSolicitud].Turno = linea[i];
             }
             else if(i >= 66 && i <72)
             {
@@ -96,9 +100,11 @@ bool LeeSolTurnos(std::ifstream &id, SolicitudTurno solicitudTurno[])
             }
         }
 
-        solicitudTurno.Matricula = atoi(aux);
-        solicitudTurno.dia = (short)atoi(aux2);
-        solicitudTurno.Credencial = atoi(aux3);
+        solicitudTurno[ultimaSolicitud].Matricula = atoi(aux);
+        solicitudTurno[ultimaSolicitud].dia = (short)atoi(aux2);
+        solicitudTurno[ultimaSolicitud].Credencial = atoi(aux3);
+
+        ultimaSolicitud++;
     }
 }
 
@@ -194,15 +200,18 @@ short convertirHHMMtoIndice(short HH, short mm)
     return valor;
 }
 
-using namespace std;
-bool mi_getline(std::istream &stream, char *salida, int max_lectura)
+bool mi_getline(std::fstream &stream, char *salida, int max_lectura)
 {
     char aux;
     int index = 0;
+    std::cout << "TEST\n";
+    printf("%d",stream.bad());
     while(stream.get(aux))
     {
         salida[index] = aux;
         index++;
+
+        std::cout << aux;
 
         if(stream.tellg() == -1)
             break;

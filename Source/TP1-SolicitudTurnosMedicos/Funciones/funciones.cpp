@@ -9,7 +9,7 @@ void ProcMedicos(std::ifstream &archivoMedicos, Medico medicos[], int &cantMedic
 
 } // Descarga archivo Medicos.
 
-void ProcEspecialidad(std::ifstream &archivoEspecialidades, Especialidad especialidades[], int &cantEspecialidades)
+void ProcEspecialidad(std::fstream &archivoEspecialidades, Especialidad especialidades[], int &cantEspecialidades)
 {
     if (archivoEspecialidades.is_open())
     {
@@ -25,16 +25,14 @@ void ProcEspecialidad(std::ifstream &archivoEspecialidades, Especialidad especia
 
 } // Descarga archivo Especialidades.
 
-void ProcTurnosDiaHora(std::ifstream &archivoTDH, Turno turnos[], int &cantTurnos)
+void ProcTurnosDiaHora(std::fstream &archivoTurnos, Turno turnos[], int &cantTurnos)
 {
-    printf("Abierto TurnosDiaHora\n");
-    std::ifstream archivoTurnos;
-    archivoTurnos.open("TurnosDiaHora.txt");
 
     if (archivoTurnos.is_open())
     {
         while (LeeTurnosDiaHora(archivoTurnos, turnos))
         {
+            cantTurnos++;
 
         }
     }
@@ -108,7 +106,7 @@ void LstTurnos(std::ofstream &archivoSalida, Turno turnos[MAX_TURNOS], int canti
 void ProcSolTurnos(SolicitudTurno solicitudTurno[])
 {
     std::ifstream archivoSolicitud;
-    archivoSolicitud.open("SolicitudTurnos.txt")
+    archivoSolicitud.open("SolicitudTurnos.txt");
 
     if (archivoSolicitud.is_open())
     {
@@ -116,7 +114,6 @@ void ProcSolTurnos(SolicitudTurno solicitudTurno[])
 
         while (LeeSolTurnos(archivoSolicitud, solicitudTurno))
         {
-
         }
     }
 } // Descarga archivo SolicitudesTurnos y lista lineas de las solicitudes.

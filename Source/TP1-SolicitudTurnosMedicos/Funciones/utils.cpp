@@ -18,7 +18,7 @@ bool LeeTurnosDiaHora(std::ifstream &id, Turno turnos[])
 
         //si alguien en algun futuro lejano lee esto
         //perdon...
-        //si por algun motivo del mundo, 
+        //si por algun motivo del mundo,
         //el archivo leyese menos de 57 caracteres esto va a volar a la mierda
         for(int i = 0; i < 57 ; i++)
         {
@@ -34,7 +34,7 @@ bool LeeTurnosDiaHora(std::ifstream &id, Turno turnos[])
                 turnos[ultimoTurno].Especialidad.Nombre[i-26] = linea[i];
             if(i >= 41 && i < 47 )
                 credencial[i-41] = linea[i];
-            
+
         }
 
         sscanf(dia, "%d", turnos[ultimoTurno].Dia);
@@ -47,6 +47,58 @@ bool LeeTurnosDiaHora(std::ifstream &id, Turno turnos[])
     else
     {
         ultimoTurno = 0;
+    }
+}
+//======================================================================
+
+bool LeeSolTurnos(std::ifstream &id, SolicitudTurno solicitudTurno[])
+{
+    char linea[72];
+    char aux[6];
+    char aux2[2];
+    char aux3[6];
+
+    if(mi_getline(id, linea, 72))
+    {
+        for(int i = 0; i < 72; i++)
+        {
+            if(i >= 0 && i <20)
+            {
+                solicitudTurno.ApellidoNombre[i] = linea[i];
+            }
+            else if(i >= 20 && i <22)
+            {
+                solicitudTurno.Edad[i - 20] = linea[i];
+            }
+            else if(i >= 22 && i <37)
+            {
+                solicitudTurno.ObraSocial[i - 22] = linea[i];
+            }
+            else if(i >= 37 && i <43)
+            {
+                aux[i - 37] = linea[i];
+            }
+            else if(i >= 43 && i <63)
+            {
+                solicitudTurno.Especialidad.Nombre[i - 43] = linea[i];
+            }
+            else if(i >= 63 && i <65)
+            {
+                aux2[i - 63] = linea[i];
+            }
+            else if(i >= 65 && i <66)
+            {
+                solicitudTurno.Turno[i - 65] = linea[i];
+            }
+            else if(i >= 66 && i <72)
+            {
+                aux[i - 66] = linea[i];
+            }
+        }
+
+        solicitudTurno.Matricula = atoi(aux);
+        solicitudTurno.dia = (short)atoi(aux2);
+        solicitudTurno.Credencial = atoi(aux3);
     }
 }
 

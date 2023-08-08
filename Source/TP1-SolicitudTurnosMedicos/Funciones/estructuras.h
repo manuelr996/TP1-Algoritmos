@@ -30,10 +30,14 @@ struct Turno
 struct SolicitudTurno
 {
     char ApellidoNombre[20];
-    short Edad;
-    short Matricula;
-    Turno Turno; //Valores del Turno
-    char FranjaHoraria; //columna Turno en el archivo
+    char Edad[2];
+    char ObraSocial[15];
+    int Matricula;
+    Especialidad Especialidad;
+    short dia;
+//    Turno Turno; //Valores del Turno
+    char Turno; //columna Turno en el archivo
+    int Credencial;
 };
 
 #endif

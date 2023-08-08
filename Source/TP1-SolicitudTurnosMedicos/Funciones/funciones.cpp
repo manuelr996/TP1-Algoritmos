@@ -105,7 +105,18 @@ void LstTurnos(std::ofstream &archivoSalida, Turno turnos[MAX_TURNOS], int canti
     }
 } // Lista ord. x Especialidades, D�as y Turnos del vuelco del archivo TurnosDiasHora.
 
-void ProcSolTurnos()
+void ProcSolTurnos(SolicitudTurno solicitudTurno[])
 {
+    std::ifstream archivoSolicitud;
+    archivoSolicitud.open("SolicitudTurnos.txt")
 
-} // Descarga archivo SolicitudesTurnos y lista l�neas de las solicitudes.
+    if (archivoSolicitud.is_open())
+    {
+        char linea[72];
+
+        while (LeeSolTurnos(archivoSolicitud, solicitudTurno))
+        {
+
+        }
+    }
+} // Descarga archivo SolicitudesTurnos y lista lineas de las solicitudes.
